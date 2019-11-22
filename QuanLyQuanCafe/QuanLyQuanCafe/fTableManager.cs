@@ -57,12 +57,12 @@ namespace QuanLyQuanCafe
         void LoadTable()
         {
             flpTable.Controls.Clear();
-
+            
             List<Table> tableList = TableDAO.Instance.LoadTableList();
 
             foreach (Table item in tableList)
             {
-                Button btn = new Button() { Width = TableDAO.TableWidth, Height = TableDAO.TableHeight };
+                Button btn = new Button() { Width = TableDAO.TableWidth, Height = TableDAO.TableHeight};
                 btn.Text = item.Name + Environment.NewLine + item.Status;
                 btn.Click += btn_Click;
                 btn.Tag = item;
@@ -97,7 +97,7 @@ namespace QuanLyQuanCafe
             }
             CultureInfo culture = new CultureInfo("vi-VN");
 
-            //Thread.CurrentThread.CurrentCulture = culture;
+            Thread.CurrentThread.CurrentCulture = culture;
 
             txbTotalPrice.Text = totalPrice.ToString("c", culture);
 
@@ -113,6 +113,17 @@ namespace QuanLyQuanCafe
 
 
         #region Events
+
+        private void thanhToánToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            btnCheckOut_Click(this, new EventArgs());
+        }
+
+        private void thêmMónToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            btnAddFood_Click(this, new EventArgs());
+        }
+
         void btn_Click(object sender, EventArgs e)
         {
             int tableID = ((sender as Button).Tag as Table).ID;
@@ -139,7 +150,33 @@ namespace QuanLyQuanCafe
         private void adminToolStripMenuItem_Click(object sender, EventArgs e)
         {
             fAdmin f = new fAdmin();
+            f.loginAccount = LoginAccount;
+            f.InsertFood += f_InsertFood;
+            f.DeleteFood += f_DeleteFood;
+            f.UpdateFood += f_UpdateFood;
             f.ShowDialog();
+        }
+
+        void f_UpdateFood(object sender, EventArgs e)
+        {
+            LoadFoodListByCategoryID((cbCategory.SelectedItem as Category).ID);
+            if (lsvBill.Tag != null)
+                ShowBill((lsvBill.Tag as Table).ID);
+        }
+
+        void f_DeleteFood(object sender, EventArgs e)
+        {
+            LoadFoodListByCategoryID((cbCategory.SelectedItem as Category).ID);
+            if (lsvBill.Tag != null)
+                ShowBill((lsvBill.Tag as Table).ID);
+            LoadTable();
+        }
+
+        void f_InsertFood(object sender, EventArgs e)
+        {
+            LoadFoodListByCategoryID((cbCategory.SelectedItem as Category).ID);
+            if (lsvBill.Tag != null)
+                ShowBill((lsvBill.Tag as Table).ID);
         }
 
         private void cbCategory_SelectedIndexChanged(object sender, EventArgs e)
@@ -161,6 +198,12 @@ namespace QuanLyQuanCafe
         {
             Table table = lsvBill.Tag as Table;
 
+            if (table == null)
+            {
+                MessageBox.Show("Hãy chọn bàn");
+                return;
+            }
+
             int idBill = BillDAO.Instance.GetUncheckBillIDByTableID(table.ID);
             int foodID = (cbFood.SelectedItem as Food).ID;
             int count = (int)nmFoodCount.Value;
@@ -168,7 +211,7 @@ namespace QuanLyQuanCafe
             if (idBill == -1)
             {
                 BillDAO.Instance.InsertBill(table.ID);
-                BillInfoDAO.Instance.InsertBillInfo(BillDAO.Instance.GetMaxIDBill(), foodID, count);
+                BillInfoDAO.Instance.InsertBillInfo(BillDAO.Instance.GetMaxIDBill(), foodID , count);
             }
             else
             {
@@ -178,7 +221,7 @@ namespace QuanLyQuanCafe
             ShowBill(table.ID);
 
             LoadTable();
-        }
+        }        
         private void btnCheckOut_Click(object sender, EventArgs e)
         {
             Table table = lsvBill.Tag as Table;
@@ -187,11 +230,11 @@ namespace QuanLyQuanCafe
             int discount = (int)nmDisCount.Value;
 
             double totalPrice = Convert.ToDouble(txbTotalPrice.Text.Split(',')[0]);
-            double finalTotalPrice = totalPrice - (totalPrice / 100) * discount;
+            double finalTotalPrice = totalPrice - (totalPrice/100)*discount;
 
             if (idBill != -1)
             {
-                if (MessageBox.Show(string.Format("Bạn có chắc thanh toán hóa đơn cho bàn {0}\nTổng tiền - (Tổng tiền / 100) x Giảm giá\n=> {1} - ({1} / 100) x {2} = {3}", table.Name, totalPrice, discount, finalTotalPrice), "Thông báo", MessageBoxButtons.OKCancel) == System.Windows.Forms.DialogResult.OK)
+                if (MessageBox.Show(string.Format("Bạn có chắc thanh toán hóa đơn cho bàn {0}\nTổng tiền - (Tổng tiền / 100) x Giảm giá\n=> {1} - ({1} / 100) x {2} = {3}",table.Name, totalPrice, discount, finalTotalPrice), "Thông báo", MessageBoxButtons.OKCancel) == System.Windows.Forms.DialogResult.OK)
                 {
                     BillDAO.Instance.CheckOut(idBill, discount, (float)finalTotalPrice);
                     ShowBill(table.ID);
@@ -201,7 +244,7 @@ namespace QuanLyQuanCafe
             }
         }
         private void btnSwitchTable_Click(object sender, EventArgs e)
-        {
+        {           
 
             int id1 = (lsvBill.Tag as Table).ID;
 

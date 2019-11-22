@@ -29,7 +29,7 @@ namespace QuanLyQuanCafe.DTO
 
             this.Status = (int)row["status"];
 
-            if (row["discount"].ToString() != "")
+            if (row["discount"].ToString() != "")                
                 this.Discount = (int)row["discount"];
         }
 

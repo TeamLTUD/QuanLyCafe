@@ -14,7 +14,7 @@ namespace QuanLyQuanCafe.DAO
 
         public static CategoryDAO Instance
         {
-            get { if (instance == null) instance = new CategoryDAO(); return CategoryDAO.instance; }
+            get { if (instance == null)instance = new CategoryDAO(); return CategoryDAO.instance; }
             private set { CategoryDAO.instance = value; }
         }
 
@@ -35,6 +35,23 @@ namespace QuanLyQuanCafe.DAO
             }
 
             return list;
+        }
+
+        public Category GetCategoryByID(int id)
+        {
+            Category category = null;
+
+            string query = "select * from FoodCategory where id = " + id;
+
+            DataTable data = DataProvider.Instance.ExecuteQuery(query);
+
+            foreach (DataRow item in data.Rows)
+            {
+                category = new Category(item);
+                return category;
+            }
+
+            return category;
         }
     }
 }

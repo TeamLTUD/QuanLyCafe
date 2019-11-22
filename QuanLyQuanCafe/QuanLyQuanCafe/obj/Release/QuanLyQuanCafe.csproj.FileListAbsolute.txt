@@ -1,0 +1,13 @@
+C:\Users\Admin\Desktop\QuanLyQuanCafe\QuanLyQuanCafe\bin\Release\QuanLyQuanCafe.exe.config
+C:\Users\Admin\Desktop\QuanLyQuanCafe\QuanLyQuanCafe\bin\Release\QuanLyQuanCafe.exe
+C:\Users\Admin\Desktop\QuanLyQuanCafe\QuanLyQuanCafe\bin\Release\QuanLyQuanCafe.pdb
+C:\Users\Admin\Desktop\QuanLyQuanCafe\QuanLyQuanCafe\bin\Release\Microsoft.SqlServer.Types.dll
+C:\Users\Admin\Desktop\QuanLyQuanCafe\QuanLyQuanCafe\obj\Release\QuanLyQuanCafe.csprojResolveAssemblyReference.cache
+C:\Users\Admin\Desktop\QuanLyQuanCafe\QuanLyQuanCafe\obj\Release\QuanLyQuanCafe.fAccountProfile.resources
+C:\Users\Admin\Desktop\QuanLyQuanCafe\QuanLyQuanCafe\obj\Release\QuanLyQuanCafe.fAdmin.resources
+C:\Users\Admin\Desktop\QuanLyQuanCafe\QuanLyQuanCafe\obj\Release\QuanLyQuanCafe.fLogin.resources
+C:\Users\Admin\Desktop\QuanLyQuanCafe\QuanLyQuanCafe\obj\Release\QuanLyQuanCafe.fTableManager.resources
+C:\Users\Admin\Desktop\QuanLyQuanCafe\QuanLyQuanCafe\obj\Release\QuanLyQuanCafe.Properties.Resources.resources
+C:\Users\Admin\Desktop\QuanLyQuanCafe\QuanLyQuanCafe\obj\Release\QuanLyQuanCafe.csproj.GenerateResource.Cache
+C:\Users\Admin\Desktop\QuanLyQuanCafe\QuanLyQuanCafe\obj\Release\QuanLyQuanCafe.exe
+C:\Users\Admin\Desktop\QuanLyQuanCafe\QuanLyQuanCafe\obj\Release\QuanLyQuanCafe.pdb

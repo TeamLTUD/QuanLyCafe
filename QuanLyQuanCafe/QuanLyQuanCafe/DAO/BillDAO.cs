@@ -28,7 +28,7 @@ namespace QuanLyQuanCafe.DAO
         /// <returns></returns>
         public int GetUncheckBillIDByTableID(int id)
         {
-            DataTable data = DataProvider.Instance.ExecuteQuery("SELECT * FROM dbo.Bill WHERE idTable = " + id + " AND status = 0");
+            DataTable data = DataProvider.Instance.ExecuteQuery("SELECT * FROM dbo.Bill WHERE idTable = " + id +" AND status = 0");
 
             if (data.Rows.Count > 0)
             {
@@ -46,12 +46,22 @@ namespace QuanLyQuanCafe.DAO
         }
         public void InsertBill(int id)
         {
-            DataProvider.Instance.ExecuteNonQuery("exec USP_InsertBill @idTable", new object[] { id });
+            DataProvider.Instance.ExecuteNonQuery("exec USP_InsertBill @idTable", new object[]{id});
         }
 
         public DataTable GetBillListByDate(DateTime checkIn, DateTime checkOut)
         {
             return DataProvider.Instance.ExecuteQuery("exec USP_GetListBillByDate @checkIn , @checkOut", new object[] { checkIn, checkOut });
+        }
+
+        public DataTable GetBillListByDateAndPage(DateTime checkIn, DateTime checkOut, int pageNum)
+        {
+            return DataProvider.Instance.ExecuteQuery("exec USP_GetListBillByDateAndPage @checkIn , @checkOut , @page", new object[] { checkIn, checkOut, pageNum });
+        }
+
+        public int GetNumBillListByDate(DateTime checkIn, DateTime checkOut)
+        {
+            return (int)DataProvider.Instance.ExecuteScalar("exec USP_GetNumBillByDate @checkIn , @checkOut", new object[] { checkIn, checkOut });
         }
 
         public int GetMaxIDBill()

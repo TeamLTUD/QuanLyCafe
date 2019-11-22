@@ -79,7 +79,7 @@ namespace QuanLyQuanCafe
         }
     }
 
-    public class AccountEvent : EventArgs
+    public class AccountEvent:EventArgs
     {
         private Account acc;
 

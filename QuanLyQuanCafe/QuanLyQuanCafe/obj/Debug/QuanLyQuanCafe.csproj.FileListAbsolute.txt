@@ -8,3 +8,7 @@ C:\Users\Admin\Documents\GitHub\QuanLyCafe\QuanLyQuanCafe\QuanLyQuanCafe\obj\Deb
 C:\Users\Admin\Documents\GitHub\QuanLyCafe\QuanLyQuanCafe\QuanLyQuanCafe\obj\Debug\QuanLyQuanCafe.csproj.GenerateResource.Cache
 C:\Users\Admin\Documents\GitHub\QuanLyCafe\QuanLyQuanCafe\QuanLyQuanCafe\obj\Debug\QuanLyQuanCafe.exe
 C:\Users\Admin\Documents\GitHub\QuanLyCafe\QuanLyQuanCafe\QuanLyQuanCafe\obj\Debug\QuanLyQuanCafe.pdb
+C:\Users\Admin\Documents\GitHub\QuanLyCafe\QuanLyQuanCafe\QuanLyQuanCafe\bin\Debug\Microsoft.SqlServer.Types.dll
+C:\Users\Admin\Documents\GitHub\QuanLyCafe\QuanLyQuanCafe\QuanLyQuanCafe\obj\Debug\QuanLyQuanCafe.fAccountProfile.resources
+C:\Users\Admin\Documents\GitHub\QuanLyCafe\QuanLyQuanCafe\QuanLyQuanCafe\obj\Debug\QuanLyQuanCafe.fAdmin.resources
+C:\Users\Admin\Documents\GitHub\QuanLyCafe\QuanLyQuanCafe\QuanLyQuanCafe\obj\Debug\QuanLyQuanCafe.fTableManager.resources
