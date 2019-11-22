@@ -458,7 +458,10 @@ BEGIN
 END
 GO
 
+--Tạo Store procedure cho chức năng cập nhật thông tin tài khoản
+
 CREATE PROC USP_UpdateAccount
+
 @userName NVARCHAR(100), @displayName NVARCHAR(100), @password NVARCHAR(100), @newPassword NVARCHAR(100)
 AS
 BEGIN
@@ -477,6 +480,8 @@ BEGIN
 	end
 END
 GO
+
+--Tạo Store procedure cho chức năng cập nhật thông tin tài khoản
 
 CREATE TRIGGER UTG_DeleteBillInfo
 ON dbo.BillInfo FOR DELETE
@@ -503,6 +508,8 @@ CREATE FUNCTION [dbo].[fuConvertToUnsign1] ( @strInput NVARCHAR(4000) ) RETURNS 
 
 GO
 
+--Tạo Store procedure cho chức năng cập nhật thông tin tài khoản
+
 CREATE PROC USP_GetListBillByDateAndPage
 @checkIn date, @checkOut date, @page int
 AS 
@@ -519,6 +526,8 @@ BEGIN
 	SELECT TOP (@selectRows) * FROM BillShow WHERE id NOT IN (SELECT TOP (@exceptRows) id FROM BillShow)
 END
 GO
+
+--Tạo Store procedure cho chức năng cập nhật thông tin tài khoản
 
 CREATE PROC USP_GetNumBillByDate
 @checkIn date, @checkOut date
