@@ -69,3 +69,58 @@ CREATE TABLE BillInfo
 	FOREIGN KEY (idFood) REFERENCES dbo.Food(id)
 )
 GO
+
+--Thêm dữ liệu tài khoản
+
+INSERT INTO dbo.Account( UserName , DisplayName ,PassWord ,Type )
+VALUES  ( N'K9' , -- UserName - nvarchar(100)
+          N'RongK9' , -- DisplayName - nvarchar(100)
+          N'1' , -- PassWord - nvarchar(1000)
+          1  -- Type - int
+        )
+INSERT INTO dbo.Account( UserName , DisplayName ,PassWord ,Type )
+VALUES  ( N'staff' , -- UserName - nvarchar(100)
+          N'staff' , -- DisplayName - nvarchar(100)
+          N'1' , -- PassWord - nvarchar(1000)
+          0  -- Type - int
+        )
+GO
+
+--Tạo Store procedure cho Account
+
+CREATE PROC USP_GetAccountByUserName
+@userName nvarchar(100)
+AS 
+BEGIN
+	SELECT * FROM dbo.Account WHERE UserName = @userName
+END
+GO
+
+--Tạo Store procedure cho Login
+
+CREATE PROC USP_Login
+@userName nvarchar(100), @passWord nvarchar(100)
+AS
+BEGIN
+	SELECT * FROM dbo.Account WHERE UserName = @userName AND PassWord = @passWord
+END
+GO
+
+--Thêm dữ liệu vào bảng TableFood
+
+DECLARE @i INT = 1
+
+WHILE @i <= 10
+BEGIN
+	INSERT dbo.TableFood ( name)VALUES  ( N'Bàn ' + CAST(@i AS nvarchar(100)))
+	SET @i = @i + 1
+END
+GO
+
+--Tạo Store procedure cho TableFood
+
+CREATE PROC USP_GetTableList
+AS SELECT * FROM dbo.TableFood
+GO
+
+--UPDATE dbo.TableFood SET status = N'Có người' WHERE id = 9

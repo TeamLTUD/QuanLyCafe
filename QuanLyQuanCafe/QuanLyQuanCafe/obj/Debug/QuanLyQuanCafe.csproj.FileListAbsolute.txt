@@ -1,1 +1,10 @@
 c:\users\admin\documents\visual studio 2015\Projects\QuanLyQuanCafe\QuanLyQuanCafe\bin\Debug\QuanLyQuanCafe.exe.config
+C:\Users\Admin\Documents\GitHub\QuanLyCafe\QuanLyQuanCafe\QuanLyQuanCafe\bin\Debug\QuanLyQuanCafe.exe.config
+C:\Users\Admin\Documents\GitHub\QuanLyCafe\QuanLyQuanCafe\QuanLyQuanCafe\bin\Debug\QuanLyQuanCafe.exe
+C:\Users\Admin\Documents\GitHub\QuanLyCafe\QuanLyQuanCafe\QuanLyQuanCafe\bin\Debug\QuanLyQuanCafe.pdb
+C:\Users\Admin\Documents\GitHub\QuanLyCafe\QuanLyQuanCafe\QuanLyQuanCafe\obj\Debug\QuanLyQuanCafe.csprojResolveAssemblyReference.cache
+C:\Users\Admin\Documents\GitHub\QuanLyCafe\QuanLyQuanCafe\QuanLyQuanCafe\obj\Debug\QuanLyQuanCafe.fLogin.resources
+C:\Users\Admin\Documents\GitHub\QuanLyCafe\QuanLyQuanCafe\QuanLyQuanCafe\obj\Debug\QuanLyQuanCafe.Properties.Resources.resources
+C:\Users\Admin\Documents\GitHub\QuanLyCafe\QuanLyQuanCafe\QuanLyQuanCafe\obj\Debug\QuanLyQuanCafe.csproj.GenerateResource.Cache
+C:\Users\Admin\Documents\GitHub\QuanLyCafe\QuanLyQuanCafe\QuanLyQuanCafe\obj\Debug\QuanLyQuanCafe.exe
+C:\Users\Admin\Documents\GitHub\QuanLyCafe\QuanLyQuanCafe\QuanLyQuanCafe\obj\Debug\QuanLyQuanCafe.pdb
