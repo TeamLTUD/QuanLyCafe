@@ -45,6 +45,10 @@ CREATE TABLE Food
 	FOREIGN KEY (idCategory) REFERENCES dbo.FoodCategory(id)
 )
 GO
+ALTER TABLE table_name
+ADD colunm_name datatype
+ALTER TABLE table_name
+ADD colunm_name datatype
 
 CREATE TABLE Bill
 (
@@ -317,6 +321,7 @@ BEGIN
 END
 GO
 
+--Tạo Store procedure cập nhật Bill
 
 CREATE TRIGGER UTG_UpdateBill
 ON dbo.Bill FOR UPDATE
@@ -345,6 +350,7 @@ ADD discount INT
 UPDATE dbo.Bill SET discount = 0
 GO
 
+--Tạo Store procedure cho chức năng chuyển bàn
 
 ALTER PROC USP_SwitchTabel
 @idTable1 INT, @idTable2 int
@@ -429,12 +435,17 @@ AS BEGIN
 END
 GO
 
+--UPDATE dbo.TableFood set status = N'Trống'
+--GO
+
+--Tạo thêm cột totalPrice với dữ liệu là FLOAT cho bảng Bill
 ALTER TABLE dbo.Bill ADD totalPrice FLOAT
-
-DELETE dbo.BillInfo
-DELETE dbo.Bill
-
 GO
+--DELETE dbo.BillInfo
+--DELETE dbo.Bill
+
+
+--Tạo Store procedure cho chức năng hiển thị danh sách hóa đơn
 
 CREATE PROC USP_GetListBillByDate
 @checkIn date, @checkOut date
