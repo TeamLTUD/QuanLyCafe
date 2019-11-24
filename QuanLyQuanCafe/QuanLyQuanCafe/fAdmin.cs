@@ -408,14 +408,14 @@ namespace QuanLyQuanCafe
             if (CategoryDAO.Instance.InsertCategory(name))
             {
                 MessageBox.Show("Thêm danh mục thành công");
-                LoadListCategory();          
+                LoadListCategory();
             }
             else
             {
                 MessageBox.Show("Có lỗi khi thêm danh mục");
             }
         }
-
+        fTableManager a = new fTableManager();
         private void btnDeleteCategory_Click(object sender, EventArgs e)
         {
             int id = Convert.ToInt32(txbCategoryID.Text);
@@ -439,7 +439,7 @@ namespace QuanLyQuanCafe
             if (CategoryDAO.Instance.UpdateCategory(id, name))
             {
                 MessageBox.Show("Sửa danh mục thành công");
-                LoadListCategory();      
+                LoadListCategory(); 
             }
             else
             {
@@ -456,6 +456,7 @@ namespace QuanLyQuanCafe
             {
                 MessageBox.Show("Thêm bàn thành công");
                 LoadListTable();
+                
             }
             else
             {

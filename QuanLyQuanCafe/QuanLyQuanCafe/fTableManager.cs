@@ -33,6 +33,7 @@ namespace QuanLyQuanCafe
             LoadCategory();
             LoadComboboxTable(cbSwitchTable);
         }
+        public fTableManager() { }
 
         #region Method
 
